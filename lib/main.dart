@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 ValueNotifier<String> myValue = ValueNotifier("No value Added");
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -34,6 +39,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,9 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(onPressed: (){
        myValue.value="GeeksForGeeks is Best";
-      setState(() {
-        
-      });
+// setState(() {
+  
+// });
       }, label: Text(
         "Update Value Notifier Value"
       )),
